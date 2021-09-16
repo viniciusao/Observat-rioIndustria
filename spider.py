@@ -59,5 +59,5 @@ class ScrapingComex:
 
 
 if __name__ == '__main__':
-    # asyncio.run(ScrapingComex(desc_path='downloaded_csv_files').go())
+    asyncio.run(ScrapingComex(desc_path='downloaded_csv_files').go())
     CSVArranger(path='downloaded_csv_files').go()
