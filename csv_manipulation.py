@@ -20,8 +20,6 @@ class CSVArranger:
 
     def _read_csv_files(self):
         for c, csv_file in enumerate(glob.glob('/'.join((self.downloaded_csv_files_comex, '*.csv')))):
-            if c == 1:
-                break
             df = pd.read_csv(csv_file, sep=';')
             df['MOVIMENTACAO'] = pd.Series(['Importação' if 'IMP' in csv_file else 'Exportação' for _ in range(len(df.index))])
             self.dfs.append(df)
